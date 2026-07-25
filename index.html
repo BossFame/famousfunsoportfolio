@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f5f2" />
+<title>Famous Funso Ibidapo — Pixel Marvel Creative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<div id="scroll-progress"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pre-logo">PIXEL MAVEN</div>
+  <div class="pre-bar-wrap"><div class="pre-bar"></div></div>
+  <div class="pre-count" id="pre-count">0%</div>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-arrow-up"></i></button>
+
+<nav id="main-nav">
+  <div>
+      <a href="#hero" class="nav-logo">PIXEL MAVEN</a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#hero" class="nav-link active">Home</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#designs" class="nav-link">Designs</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+    <a href="#contact" class="nav-link nav-cta">Start a Project</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#hero" onclick="closeMobile()">Home</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#designs" onclick="closeMobile()">Designs</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span></span>Available for Projects</div>
+    <h1 class="hero-name">FAMOUS <em>FUNSO</em><br>IBIDAPO</h1>
+    <p class="hero-title">Web Developer &amp; Brand Experience Designer</p>
+    <p class="hero-tagline">Designing consistent brand experiences across web, visuals, and identity.</p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">View Work <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#contact" class="btn-secondary">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-decoration">
+    <div class="hero-deco-ring">
+      <div class="hero-avatar-placeholder">
+        <img
+          src="images/bossfame.jpg"
+          alt="Famous Funso Ibidapo"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          onerror="this.onerror=null;this.src='images/bossfame.jpg';"
+          style="width:100%;height:100%;object-fit:cover;"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    Scroll to explore
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Brand Identity <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Web Development <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Event Branding <span class="marquee-dot"></span></span>
+    <span class="marquee-item">UI Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Flyer & Social Media Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Stationary & Publication Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Visual Identity <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pixel Marvel Creative <span class="marquee-dot"></span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">Brand Identity <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Web Development <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Event Branding <span class="marquee-dot"></span></span>
+    <span class="marquee-item">UI Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Flyer & Social Media Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Stationary & Publication Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Visual Identity <span class="marquee-dot"></span></span>
+    
+  </div>
+</div>
+
+<section id="projects">
+  <div class="section-label">Featured Case Study</div>
+  <div class="section-title reveal">THE SHIFT</div>
+  <div class="section-sub reveal">A full-scale event brand and digital system; from identity to infrastructure.</div>
+
+  <div class="case-study-header" style="margin-top:3rem;">
+    <div class="reveal-left">
+      <div class="meta-block">
+        <div class="meta-label">Problem</div>
+        <div class="meta-value">Mindset stagnation; a generation stuck in inertia, needing a catalyst for transformation and productivity.</div>
+      </div>
+      <div class="meta-block" style="margin-top:1.5rem;">
+        <div class="meta-label">Goal</div>
+        <div class="meta-value">Design an immersive event experience that inspires growth; with digital systems to match the ambition.</div>
+      </div>
+      <div class="case-study-links">
+        <a href="https://bossfame.rf.gd/" class="btn-outline-orange"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+        <a href="https://github.com/bossfame" class="btn-outline-white"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="meta-block">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">Full Design + Full-Stack Development</div>
+      </div>
+      <div class="meta-block" style="margin-top:1.2rem;">
+        <div class="meta-label">Tools</div>
+        <div class="meta-tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span>
+          <span class="tag">JavaScript</span><span class="tag">PHP</span>
+          <span class="tag">PixelLab</span><span class="tag">Affinity</span>
+          <span class="tag">Photoshop</span>
+        </div>
+      </div>
+      <div class="meta-block" style="margin-top:1.2rem;">
+        <div class="meta-label">Features Built</div>
+        <div class="meta-value">Ticket system with QR generation · Seat assignment · DP generator · Speaker &amp; resource pages</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="h-scroll-wrap reveal">
+    <div class="h-scroll" id="project-gallery">
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/theShift.jpg"></div><div class="h-scroll-item-label">01 — The Brand</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/theShiftAnticipate.jpg"></div><div class="h-scroll-item-label">02 — Anticipation</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/officialShift.jpg"></div><div class="h-scroll-item-label">03 — Official Flyer</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/theShiftHomepage.jpg"></div><div class="h-scroll-item-label">04 — Website UI</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/theShiftSpeaker.jpg"></div><div class="h-scroll-item-label">05 — Speaker</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/ticket1.jpg"></div><div class="h-scroll-item-label">06 — Ticket</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/theShiftDp.jpg"></div><div class="h-scroll-item-label">07 — DP Generator</div></div>
+      <!-- <div class="h-scroll-item"><div class="h-scroll-placeholder">Branding Kit</div><div class="h-scroll-item-label">10 — Brand Kit</div></div> -->
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/theShiftDday.jpg"></div><div class="h-scroll-item-label">08 — D-Day</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/theShiftThanks.jpg"></div><div class="h-scroll-item-label">09 — Thanks</div></div>
+    </div>
+    <div class="gallery-hint" aria-hidden="true"><span>More images</span><i class="fa-solid fa-arrow-right"></i></div>
+  </div>
+
+  <!-- Academic Seminar -->
+   <br>
+   <br>
+<div class="section-title reveal">NAMTES Academic Seminar</div>
+<div class="section-sub reveal">Themed: The Smart Student Blueprint (From Classroom to Career)</div>
+
+<div class="case-study-header" style="margin-top:3rem;">
+  <div class="reveal-left">
+    <div class="meta-block">
+      <div class="meta-label">Problem</div>
+      <div class="meta-value">
+        The seminar needed a professional online presence to create awareness, build anticipation, and communicate essential event information in a clear and engaging way.
+      </div>
+    </div>
+
+    <div class="meta-block" style="margin-top:1.5rem;">
+      <div class="meta-label">Goal</div>
+      <div class="meta-value">
+        Develop a modern, responsive event landing page that enables users to generate personalised display pictures (DPs) for social media, encouraging them to share their participation and increase awareness of the event through peer-to-peer promotion.
+      </div>
+    </div>
+      <div class="case-study-links">
+        <a href="https://namtesacadseminar.rf.gd/" class="btn-outline-orange"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+        <a href="https://github.com/bossfame" class="btn-outline-white"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="meta-block">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">Full Design + Full-Stack Development</div>
+      </div>
+      <div class="meta-block" style="margin-top:1.2rem;">
+        <div class="meta-label">Tools</div>
+        <div class="meta-tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span>
+          <span class="tag">JavaScript</span><span class="tag">PHP</span>
+          <span class="tag">PixelLab</span><span class="tag">Affinity</span>
+          <span class="tag">Photoshop</span>
+        </div>
+      </div>
+      <div class="meta-block" style="margin-top:1.2rem;">
+        <div class="meta-label">Features Built</div>
+        <div class="meta-value">Ticket system with QR generation · Seat assignment · DP generator · Speaker &amp; resource pages</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="h-scroll-wrap reveal">
+    <div class="h-scroll" id="project-gallery">
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/officialAcad.jpg"></div><div class="h-scroll-item-label">01 — Official Flyer</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/Acadofficial.jpg"></div><div class="h-scroll-item-label">02 — Unveiling</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/AcadCountdown.jpg"></div><div class="h-scroll-item-label">03 — Countdown</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/AcadCert.jpg"></div><div class="h-scroll-item-label">04 — Certificate</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/AcadSpeaker.jpg"></div><div class="h-scroll-item-label">05 — Speaker</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/AcadDP.jpg"></div><div class="h-scroll-item-label">06 — Dp Flyer</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/acadAnticipate.jpg"></div><div class="h-scroll-item-label">07 — Anticipate</div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/acadAttendees.jpg"></div><div class="h-scroll-item-label">08 — Attendees</div></div>
+    </div>
+    <div class="gallery-hint" aria-hidden="true"><span>More images</span><i class="fa-solid fa-arrow-right"></i></div>
+  </div>
+</section> <!-- closes #projects -->
+
+<!-- Event Designs -->
+<section id="event-designs" style="background:var(--bg-base);">
+  <div class="design-category1 reveal">
+    <div class="design-cat-header">
+      <div class="section-title">Event Designs</div>
+      <div class="design-cat-desc">Full-scale event identities from concept to print.<br></div>
+    </div>
+
+    <div class="design-cat-title reveal">2025 Events Camp & Competitions</div>
+    <div class="h-scroll">
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px)"><div class="h-scroll-placeholder"><img src="images/eksbc1.jpg" alt="Event design 1" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px)"><div class="h-scroll-placeholder"><img src="images/eksbc2.jpg" alt="Event design 2" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);"><div class="h-scroll-placeholder"><img src="images/eksbc3.jpg" alt="Event design 3" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);"><div class="h-scroll-placeholder"><img src="images/eksbc4.jpg" alt="Event design 4" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);"><div class="h-scroll-placeholder"><img src="images/eksbc5.jpg" alt="Event design 5" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);"><div class="h-scroll-placeholder"><img src="images/eksbc6.jpg" alt="Event design 6" loading="lazy" decoding="async"></div></div>
+    </div>
+
+    <div class="design-cat-title reveal">Regimental Music</div>
+    <div class="h-scroll">
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);aspect-ratio:8/11;"><div class="h-scroll-placeholder"><img src="images/regimental1.jpg" alt="Regimental music design 1" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);aspect-ratio:4/5;"><div class="h-scroll-placeholder"><img src="images/regimental2.jpg" alt="Regimental music design 2" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);aspect-ratio:2/3;"><div class="h-scroll-placeholder"><img src="images/regimental3.jpg" alt="Regimental music design 3" loading="lazy" decoding="async"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,300px);aspect-ratio:2/3;"><div class="h-scroll-placeholder"><img src="images/regimental4.jpg" alt="Regimental music design 4" loading="lazy" decoding="async"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Designs -->
+<section id="designs">
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title reveal">DESIGN<br>WORK</h2>
+
+  <!-- Birthday Design -->
+  <div class="design-category reveal" style="margin-top:3.5rem;">
+    <div class="design-cat-header">
+      <div class="design-cat-title">Birthday Designs</div>
+      <div class="design-cat-desc">Scroll-stopping visuals crafted for digital engagement.</div>
+    </div>
+    <div class="h-scroll">
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/bd1.jpg"></div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/bd2.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(180px,26vw,280px);aspect-ratio:1/1;"><div class="h-scroll-placeholder"><img src="images/bd3.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(180px,26vw,280px);aspect-ratio:1/1;"><div class="h-scroll-placeholder"><img src="images/bd4.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(180px,26vw,280px);aspect-ratio:1/1;"><div class="h-scroll-placeholder"><img src="images/bd5.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(180px,26vw,280px);aspect-ratio:1/1;"><div class="h-scroll-placeholder"><img src="images/bd6.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(180px,26vw,280px);aspect-ratio:1/1;"><div class="h-scroll-placeholder"><img src="images/bd7.jpg"></div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/bd8.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(180px,26vw,280px);aspect-ratio:1/1;"><div class="h-scroll-placeholder"><img src="images/bd9.jpg"></div></div>
+    </div>
+  </div>
+
+
+  <!-- Business Ads -->
+  <div class="design-category reveal">
+    <div class="design-cat-header">
+      <div class="design-cat-title">Advertisement Flyer</div>
+      <div class="design-cat-desc">Commercial visuals that convert attention into action.</div>
+    </div>
+    <div class="h-scroll">
+      <div class="h-scroll-item"><img src="images/val.jpg"><div class="h-scroll-placeholder">Ad 01</div></div>
+      <div class="h-scroll-item"><img src="images/mil.jpg"><div class="h-scroll-placeholder">Ad 02</div></div>
+      <div class="h-scroll-item" style="align-items: center;"><img src="images/owa.jpg"><div class="h-scroll-placeholder">Ad 03</div></div>
+      <div class="h-scroll-item"><img src="images/tut1.jpg"><div class="h-scroll-placeholder">Ad 04</div></div>
+      <div class="h-scroll-item"><img src="images/tut2.jpg"><div class="h-scroll-placeholder">Ad 05</div></div>
+      <div class="h-scroll-item" style="aspect-ratio:1/1;"><img src="images/ad1.jpg"><div class="h-scroll-placeholder">Ad 06</div></div>
+      <div class="h-scroll-item"><img src="images/ad2.jpg"><div class="h-scroll-placeholder">Ad 07</div></div>
+      <div class="h-scroll-item"><img src="images/ad3.jpg"><div class="h-scroll-placeholder">Ad 08</div></div>
+      <div class="h-scroll-item"><img src="images/ad4.jpg"><div class="h-scroll-placeholder">Ad 09</div></div>
+      <div class="h-scroll-item"><img src="images/ad10.jpg"><div class="h-scroll-placeholder">Ad 10</div></div>
+      <div class="h-scroll-item"><img src="images/ad11.jpg"><div class="h-scroll-placeholder">Ad 11</div></div>
+      <div class="h-scroll-item"><img src="images/ad12.jpg"><div class="h-scroll-placeholder">Ad 12</div></div>
+    </div>
+  </div>
+
+  <!-- Church Branding -->
+  <div class="design-category reveal">
+    <div class="design-cat-header">
+      <div class="design-cat-title">Church Branding</div>
+      <div class="design-cat-desc">Faith-centered visual identities built with reverence and clarity.</div>
+    </div>
+    <div class="h-scroll">
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church1.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church2.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church3.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church4.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church5.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church6.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church7.jpg"></div></div>
+      <div class="h-scroll-item"><div class="h-scroll-placeholder"><img src="images/church8.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/church10.jpg"></div></div>
+    </div>
+  </div>
+
+    <div class="design-category reveal">
+    <div class="design-cat-header">
+      <div class="design-cat-title">Banner</div>
+      <!-- <div class="design-cat-desc">Faith-centered visual identities built with reverence and clarity.</div> -->
+    </div>
+    <div class="h-scroll">
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/banner1.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/banner2.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/banner3.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/banner4.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/banner5.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/banner6.jpg"></div></div>
+    </div>
+  </div>
+
+    <!-- New Month -->
+  <div class="design-category reveal">
+    <div class="design-cat-header">
+      <div class="design-cat-title">New Month</div>
+      <!-- <div class="design-cat-desc">Faith-centered visual identities built with reverence and clarity.</div> -->
+    </div>
+    <div class="h-scroll">
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/nm1.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/nm2.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/nm3.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/nm4.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/nm5.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/nm6.jpg"></div></div>
+
+    </div>
+  </div>
+
+
+    <!-- Invitation -->
+  <div class="design-category reveal">
+    <div class="design-cat-header">
+      <div class="design-cat-title">Invitations</div>
+      <!-- <div class="design-cat-desc">Faith-centered visual identities built with reverence and clarity.</div> -->
+    </div>
+    <div class="h-scroll">
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/iv2.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/iv3.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/iv1.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/iv4.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/iv5.jpg"></div></div>
+      <div class="h-scroll-item" style="flex:0 0 clamp(200px,28vw,310px);"><div class="h-scroll-placeholder"><img src="images/iv6.jpg"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-label">What I Do</div>
+  <h2 class="section-title reveal">SERVICES</h2>
+  <p class="section-sub reveal">Every engagement is built around your brand's unique needs; strategic, intentional, and pixel-perfect.</p>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+      <div class="service-name">Brand Identity Design</div>
+      <p class="service-desc">Complete visual systems: logos, typography, colour palettes, guidelines; that speak your brand's truth consistently across every touchpoint.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fa-solid fa-broadcast-tower"></i></div>
+      <div class="service-name">Event Branding</div>
+      <p class="service-desc">End-to-end event identities: from anticipation flyers, Official flyers and programmes to digital systems that manage tickets, seats, and attendees.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+      <div class="service-name">Website Development</div>
+      <p class="service-desc">Full-stack web experiences: fast, responsive, and beautifully designed; built with modern technologies and tailored to your goals.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+      <div class="service-name">Flyer & Social Media Design</div>
+      <p class="service-desc">Scroll-stopping visuals optimised for digital platforms; social posts, ads, banners, and campaigns that demand attention.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process">
+  <div class="section-label">How I Work</div>
+  <h2 class="section-title reveal">THE PROCESS</h2>
+  <p class="section-sub reveal">Every project follows a deliberate rhythm; from the first conversation to the final pixel.</p>
+
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-number">01</div>
+      <div class="step-dot"></div>
+      <div class="step-title">DISCOVERY</div>
+      <div class="step-desc">Deep-dive into your brand, audience, goals, and constraints. No assumptions; only listening to client's brief.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-number">02</div>
+      <span class="step-dot"></span>
+      <div class="step-title">RESEARCH</div>
+      <div class="step-desc">Getting inspiration from various design and moodboard then coming up with a draft</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-number">03</div>
+      <span class="step-dot"></span>
+      <div class="step-title">DESIGN</div>
+      <div class="step-desc">Building a consistent visual identity; from moodboards to polished, production ready assets.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-number">04</div>
+      <span class="step-dot"></span>
+      <div class="step-title">DEVELOPMENT</div>
+      <div class="step-desc">Translating design into functional, high-performance digital systems (where applicable). Code that works as beautifully as it looks.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-number">05</div>
+      <span class="step-dot"></span>
+      <div class="step-title">DELIVERY</div>
+      <div class="step-desc">Final execution, testing, refinement, and handoff. You leave with something that exceeds expectations.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Skills -->
+<section id="skills">
+  <div class="section-label">Capabilities</div>
+  <h2 class="section-title reveal">SKILLS</h2>
+
+  <div class="skills-grid">
+    <div class="reveal-left">
+      <div class="skills-group-title">DEVELOPMENT</div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">HTML</span><span class="skill-pct">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">CSS</span><span class="skill-pct">85%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">JavaScript</span><span class="skill-pct">65%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="65"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">PHP</span><span class="skill-pct">80%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="skills-group-title">DESIGN TOOLS</div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">Adobe Photoshop</span><span class="skill-pct">85%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">CorelDRAW</span><span class="skill-pct">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">PixelLab</span><span class="skill-pct">95%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="95"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">Affinity by Canva</span><span class="skill-pct">85%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">Adobe Illustrator</span><span class="skill-pct">80%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-meta"><span class="skill-name">Adobe InDesign</span><span class="skill-pct">65%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="65"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-image-wrap reveal-left">
+      <div class="about-img-frame">
+        <div class="about-img-placeholder">FFI</div>
+        <img src="images/bossfame.jpg" alt="Famous Funso Ibidapo" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+      </div>
+      <div class="about-badge">
+        <div class="about-badge-num">600+</div>
+        <div class="about-badge-label">Designs Delivered</div>
+      </div>
+    </div>
+    <div class="about-text reveal-right">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">BEHIND THE<br><em style="font-style:normal;background:var(--orange-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">PIXEL</em></h2>
+      <p>I'm Famous Funso Ibidapo; a graduate of Mechatronics Engineering from the Federal University Oye; Ekiti (FUOYE), with a passion for creating meaningful digital experiences at the intersection of technology, design, and visual communication.</p>
+      <p>I specialize in building end-to-end brand experiences; from developing distinctive visual identities and intuitive user interfaces to designing and developing responsive websites and digital products. I believe great design is more than aesthetics; it's a strategic tool that solves problems, communicates ideas, and creates lasting connections between brands and their audiences.</p>
+      <p>With a multidisciplinary background that combines engineering, creative design, and web development, I bring analytical thinking and creativity to every project. I enjoy transforming ideas into impactful, user-centered solutions that are functional, visually engaging, and aligned with business goals.</p>
+      <p>When I'm not designing or coding, you'll find me learning and playing musical instruments. Music has strengthened my creativity, discipline, and attention to detail; qualities that continue to shape my approach to design, development, and problem solving.</p>
+      <button type="button" class="cv-btn" style="margin-top:1.5rem;display:inline-flex;" data-open-cv><i class="fa-solid fa-eye"></i> View CV</button>
+      <div class="about-signature">Famous Funso</div>
+    </div>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric-card reveal">
+      <div class="metric-num">600+</div>
+      <div class="metric-label">Designs Created</div>
+    </div>
+    <div class="metric-card reveal">
+      <div class="metric-num">10+</div>
+      <div class="metric-label">Branding Projects</div>
+    </div>
+    <div class="metric-card reveal">
+      <div class="metric-num">3+</div>
+      <div class="metric-label">Full-Stack Website</div>
+    </div>
+    <div class="metric-card reveal">
+      <div class="metric-num">3+</div>
+      <div class="metric-label">Years of Growth</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+<!-- ============================================================ -->
+<section id="experience" style="background: var(--bg-card);">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title reveal">WORK & ROLES</h2>
+
+  <div class="timeline" style="margin-top: 3rem;">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2023 – Present</div>
+      <div class="timeline-org">Freelance</div>
+      <div class="timeline-role">Pixel Maven Creatives</div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2024 – 2026</div>
+      <div class="timeline-org">Anglican Students Fellowship</div>
+      <div class="timeline-role">Creative Designer</div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2024 – Present</div>
+      <div class="timeline-org">ANCHOR MEDIA TEAM (BBN, Ekiti South)</div>
+      <div class="timeline-role">Head of Media, Brand & Visual Designer</div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Sept 2025 – March 2026</div>
+      <div class="timeline-org">Agba Cinema</div>
+      <div class="timeline-role">Creative / Visual Designer</div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">March 2025 – September 2025</div>
+      <div class="timeline-org">Mckodev Tech Lab</div>
+      <div class="timeline-role">Web Development Intern</div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2024 – 2025</div>
+      <div class="timeline-org">NAMTES</div>
+      <div class="timeline-role">Graphic Designer</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION
+     ============================================================ -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title reveal">ACADEMIC<br>BACKGROUND</h2>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div class="edu-card-body">
+        <div class="edu-school">Federal University Oye-Ekiti</div>
+        <div class="edu-degree">B.Eng. Mechatronics Engineering<br>Department of Mechatronics Engineering</div>
+        <div class="edu-years">2020 — 2026</div>
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="fa-solid fa-robot"></i></div>
+      <div class="edu-card-body">
+        <div class="edu-school">Engineering Discipline</div>
+        <div class="edu-degree">Focused on systems thinking, automation, design logic, and technology-driven problem solving.</div>
+        <div class="edu-years">Core Focus</div>
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="fa-solid fa-award"></i></div>
+      <div class="edu-card-body">
+        <div class="edu-school">Growth</div>
+        <div class="edu-degree">Built a multidisciplinary foundation in design, development, and communication through hands-on creative work.</div>
+        <div class="edu-years">Continual Learning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section id="testimonials" style="background:var(--bg-card);">
+  <div class="section-label">Social Proof</div>
+  <h2 class="section-title reveal">WHAT THEY<br>SAY</h2>
+
+  <div class="testimonials-carousel reveal">
+    <div class="testimonials-track" id="testimonials-track">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Famous brought our event brand to life in ways we didn't expect. The Annual Camp & Competitions 2025 publicity was massive, and his designs were a huge part of that."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AE</div>
+          <div>
+            <div class="testimonial-name">Adeola Emmanuel</div>
+            <div class="testimonial-company">Member, Planning Committee</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The Anticipation website he built for us was clean, fast, and exactly what we envisioned. He understands both design and tech; a rare combination."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KA</div>
+          <div>
+            <div class="testimonial-name">Bunmi Ige</div>
+            <div class="testimonial-company">Church Creative Director</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Your Designs are simple and classic"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">TP</div>
+          <div>
+            <div class="testimonial-name">Tosin Prints</div>
+            <div class="testimonial-company">Printing Lead</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"He delivered everything on time, communicated clearly, and the quality was beyond what we paid for. Will definitely work together again."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">BI</div>
+          <div>
+            <div class="testimonial-name">Kehinde Arileola</div>
+            <div class="testimonial-company">Event Coordinator</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Famous doesn't just design; he thinks. He asked questions I hadn't thought to ask, and the result was a brand that truly represents us."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KA</div>
+          <div>
+            <div class="testimonial-name">Kola Adeyemi</div>
+            <div class="testimonial-company">Business Owner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+          <button class="carousel-btn" id="prev-btn" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="carousel-btn" id="next-btn" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title reveal">LET'S BUILD<br>YOUR BRAND</h2>
+  <p class="section-sub reveal">Have a project in mind? I'd love to hear about it. Let's create something extraordinary together.</p>
+
+  <div class="contact-grid" style="margin-top:3rem;">
+    <div class="contact-info reveal-left">
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-val"><a href="mailto:famousfunso@gmail.com" style="color:var(--orange-mid);">famousfunso@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div>
+          <div class="contact-detail-label">WhatsApp</div>
+          <div class="contact-detail-val"><a href="https://wa.me/2347036415305" target="_blank" style="color:var(--orange-mid);">Chat on WhatsApp <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-val">+234 703 641 5305</div>
+        </div>
+      </div>
+      <div style="margin-top:0.5rem;">
+        <div class="contact-detail-label" style="margin-bottom:0.8rem;">Find Me Online</div>
+        <div class="social-row">
+          <a href="https://www.instagram.com/famous_funso001" class="social-link" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https:/www.linkedin.com/in/famous-funso" class="social-link" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/bossfame" class="social-link" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.facebook.com/pixelmavencreatives" class="social-link" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@famous_funso" class="social-link" aria-label="TikTok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="contact-form">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="e.g. Famous Funso" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Needed</label>
+          <input type="text" class="form-input" placeholder="e.g. Event Branding & Design" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Me About Your Project</label>
+          <textarea class="form-textarea" placeholder="Share your vision, goals, timeline..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleFormSubmit(event)">
+          Send Message <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-logo">PIXEL MAVEN CREATIVES</div>
+      <div class="footer-tagline">Designing consistent brand experiences across web, visuals, and identity.</div>
+      <div class="social-row" style="margin-top:1.2rem;">
+        <a href="https://www.facebook.com/pixelmavencreatives" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https:/www.linkedin.com/in/famous-funso" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/bossfame" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.66rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem;">Navigate</div>
+      <div class="footer-nav-links" style="flex-direction:column;gap:0.7rem;">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#designs">Designs</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.66rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem;">Download</div>
+      <button type="button" class="cv-btn" data-open-cv><i class="fa-solid fa-eye"></i> View CV</button>
+      <div style="margin-top:2rem;">
+        <div style="font-size:0.66rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.7rem;">Start a Project</div>
+        <a href="https://wa.me/2347036415305" class="btn-primary" style="font-size:0.72rem;padding:0.6rem 1.3rem;">Whatshapp <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 <em>Famous Funso Ibidapo</em> · Pixel Maven Creatives. All rights reserved.</div>
+    <div class="footer-copy">Designed & Built with precision <i class="fa-solid fa-sparkles"></i></div>
+  </div>
+</footer>
+
+<div class="cv-modal" id="cv-modal" hidden>
+  <div class="cv-modal-backdrop" data-close-cv></div>
+  <div class="cv-modal-card" role="dialog" aria-modal="true" aria-label="CV preview">
+    <div class="cv-modal-header">
+      <h3>CV Preview</h3>
+      <button type="button" class="cv-modal-close" aria-label="Close preview" data-close-cv><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cv-modal-body">
+      <img src="images/myCV.png" alt="CV" loading="lazy" decoding="async" />
+    </div>
+    <div class="cv-modal-actions">
+      <a href="images/myCV.png" class="btn-primary" download>Download CV</a>
+      <button type="button" class="btn-secondary" data-close-cv>Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox-backdrop" data-close-lightbox></div>
+  <div class="lightbox-shell" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button type="button" class="lightbox-close" aria-label="Close image preview" data-close-lightbox><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-stage">
+      <img class="lightbox-image" src="" alt="" />
+    </div>
+    <div class="lightbox-controls">
+      <button type="button" class="lightbox-control" data-action="zoom-out" aria-label="Zoom out"><i class="fa-solid fa-minus"></i></button>
+      <button type="button" class="lightbox-control" data-action="reset" aria-label="Reset zoom"><i class="fa-solid fa-rotate-left"></i></button>
+      <button type="button" class="lightbox-control" data-action="zoom-in" aria-label="Zoom in"><i class="fa-solid fa-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
