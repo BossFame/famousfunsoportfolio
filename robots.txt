@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://bossfame.github.io/famousfunsoportfolio/sitemap.xml
