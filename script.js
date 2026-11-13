@@ -22,23 +22,25 @@
     initContactForm();
   });
 
-  /* ============================================================
-     PRELOADER
-     ============================================================ */
+  // Preloader
   function initPreloader() {
     var preloader = document.getElementById('preloader');
     var countEl = document.getElementById('pre-count');
+    var barEl = document.getElementById('pre-bar');
     if (!preloader) return;
 
     var pct = 0;
-    var duration = prefersReducedMotion ? 300 : 1800;
+    var duration = prefersReducedMotion ? 300 : 3000;
     var start = null;
+    var finished = false;
 
     function tick(ts) {
+      if (finished) return;
       if (start === null) start = ts;
       var elapsed = ts - start;
       pct = Math.min(100, Math.round((elapsed / duration) * 100));
       if (countEl) countEl.textContent = pct + '%';
+      if (barEl) barEl.style.width = pct + '%';
       if (pct < 100) {
         requestAnimationFrame(tick);
       } else {
@@ -47,21 +49,21 @@
     }
 
     function finish() {
+      if (finished) return;
+      finished = true;
       preloader.classList.add('fade-out');
       window.setTimeout(function () {
         preloader.setAttribute('hidden', '');
-      }, 750);
+      }, 500);
     }
 
     requestAnimationFrame(tick);
 
     // Safety net: never let the preloader trap a visitor if something above stalls.
-    window.setTimeout(finish, duration + 1200);
+    window.setTimeout(finish, duration + 300);
   }
 
-  /* ============================================================
-     CUSTOM CURSOR
-     ============================================================ */
+  // Custom Cursor
   function initCustomCursor() {
     var dot = document.getElementById('cursor');
     var ring = document.getElementById('cursor-ring');
@@ -106,9 +108,7 @@
     });
   }
 
-  /* ============================================================
-     SCROLL PROGRESS BAR
-     ============================================================ */
+// Scroll Progress Bar
   function initScrollProgress() {
     var bar = document.getElementById('scroll-progress');
     if (!bar) return;
@@ -123,75 +123,94 @@
     update();
   }
 
-  /* ============================================================
-     NAV: active link tracking, mobile menu, theme toggle
-     ============================================================ */
   function initNav() {
-    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a.nav-link'));
-    var sections = navLinks
-      .map(function (a) { return document.querySelector(a.getAttribute('href')); })
-      .filter(Boolean);
+    var pages = {
+      home: ['hero', 'projects', 'campaign-designs', 'digital-profile', 'skills'],
+      designs: ['event-designs', 'designs'],
+      services: ['services', 'process'],
+      about: ['about', 'experience', 'education', 'testimonials'],
+      contact: ['contact']
+    };
+    var aliases = { hero: 'home', projects: 'home', work: 'home' };
+    var owner = {};
+    Object.keys(pages).forEach(function (page) {
+      pages[page].forEach(function (id) { owner[id] = page; });
+    });
 
-    if (sections.length && 'IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var id = '#' + entry.target.id;
-            navLinks.forEach(function (a) {
-              a.classList.toggle('active', a.getAttribute('href') === id);
-            });
-          }
-        });
-      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-      sections.forEach(function (s) { observer.observe(s); });
+    function resolve() {
+      var id = window.location.hash.slice(1);
+      id = aliases[id] || id;
+      if (pages[id]) return { page: id };
+      if (owner[id]) return { page: owner[id], target: id };
+      return { page: 'home' };
     }
 
-    // Mobile hamburger menu
+    function showPage() {
+      var route = resolve();
+      Object.keys(pages).forEach(function (page) {
+        pages[page].forEach(function (id) {
+          var section = document.getElementById(id);
+          if (section) section.hidden = page !== route.page;
+        });
+      });
+
+      document.querySelectorAll('.nav-links a.nav-link').forEach(function (link) {
+        var target = link.getAttribute('href').slice(1);
+        target = aliases[target] || target;
+        link.classList.toggle('active', target === route.page);
+      });
+
+      var targetSection = route.target && document.getElementById(route.target);
+      if (targetSection && route.target !== pages[route.page][0]) {
+        targetSection.scrollIntoView();
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    window.addEventListener('hashchange', showPage);
+    showPage();
+
     var hamburger = document.getElementById('hamburger');
     var mobileMenu = document.getElementById('mobile-menu');
     if (hamburger && mobileMenu) {
       function closeMobile() {
         mobileMenu.classList.remove('open');
-        hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
-      function openMobile() {
-        mobileMenu.classList.add('open');
-        hamburger.classList.add('open');
-        hamburger.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
+
       hamburger.addEventListener('click', function () {
-        if (mobileMenu.classList.contains('open')) closeMobile(); else openMobile();
+        var isOpen = mobileMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
       });
-      mobileMenu.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', closeMobile);
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMobile);
       });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeMobile();
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeMobile();
       });
       window.closeMobile = closeMobile;
     }
 
-    // Theme toggle
     var themeToggle = document.getElementById('theme-toggle');
     var root = document.documentElement;
     var metaTheme = document.querySelector('meta[name="theme-color"]');
     function setTheme(theme) {
       root.setAttribute('data-theme', theme);
-      var icon = themeToggle ? themeToggle.querySelector('i') : null;
+      var icon = themeToggle && themeToggle.querySelector('svg path');
       if (icon) {
-        icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        icon.setAttribute('d', theme === 'dark'
+          ? 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42'
+          : 'M20.2 15.8A8 8 0 0 1 8.2 3.8 8.5 8.5 0 1 0 20.2 15.8Z');
       }
-      if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#050505' : '#f7f5f2');
+      if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#171615' : '#ffffff');
     }
     if (themeToggle) {
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       themeToggle.addEventListener('click', function () {
-        var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        setTheme(current === 'dark' ? 'light' : 'dark');
+        setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
       });
     }
   }
@@ -248,9 +267,7 @@
     observer.observe(section);
   }
 
-  /* ============================================================
-     TESTIMONIALS CAROUSEL
-     ============================================================ */
+// Testimonial Carousel
   function initTestimonialCarousel() {
     var track = document.getElementById('testimonials-track');
     var prevBtn = document.getElementById('prev-btn');
@@ -293,9 +310,7 @@
     update();
   }
 
-  /* ============================================================
-     DRAG-TO-SCROLL FOR HORIZONTAL GALLERIES
-     ============================================================ */
+
   function initDragScroll() {
     var scrollers = document.querySelectorAll('.h-scroll');
     scrollers.forEach(function (scroller) {
@@ -317,7 +332,7 @@
         if (Math.abs(delta) > 4) moved = true;
         scroller.scrollLeft = startScroll - delta;
       });
-      // Prevent the click-through to the lightbox when the user was dragging, not clicking.
+
       scroller.addEventListener('click', function (e) {
         if (moved) {
           e.preventDefault();
@@ -327,9 +342,7 @@
     });
   }
 
-  /* ============================================================
-     LIGHTBOX
-     ============================================================ */
+// Light Box
   function initLightbox() {
     var lightbox = document.getElementById('lightbox');
     if (!lightbox) return;
@@ -379,9 +392,7 @@
     });
   }
 
-  /* ============================================================
-     CV MODAL
-     ============================================================ */
+// CV Modal
   function initCvModal() {
     var modal = document.getElementById('cv-modal');
     if (!modal) return;
@@ -408,9 +419,7 @@
     });
   }
 
-  /* ============================================================
-     BACK TO TOP
-     ============================================================ */
+// Back to Top
   function initBackToTop() {
     var btn = document.getElementById('back-top');
     if (!btn) return;
@@ -424,9 +433,7 @@
     toggle();
   }
 
-  /* ============================================================
-     CONTACT FORM
-     ============================================================ */
+// Contact Form
   function initContactForm() {
     var form = document.getElementById('contact-form');
     var status = document.getElementById('form-status');
