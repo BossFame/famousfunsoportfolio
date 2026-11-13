@@ -30,7 +30,9 @@
     if (!preloader) return;
 
     var pct = 0;
-    var duration = prefersReducedMotion ? 300 : 3000;
+    var duration = prefersReducedMotion ? 300 : 1500;
+    var fadeDuration = prefersReducedMotion ? 0 : 500;
+    var progressDuration = duration - fadeDuration;
     var start = null;
     var finished = false;
 
@@ -38,7 +40,7 @@
       if (finished) return;
       if (start === null) start = ts;
       var elapsed = ts - start;
-      pct = Math.min(100, Math.round((elapsed / duration) * 100));
+      pct = Math.min(100, Math.round((elapsed / progressDuration) * 100));
       if (countEl) countEl.textContent = pct + '%';
       if (barEl) barEl.style.width = pct + '%';
       if (pct < 100) {
@@ -54,13 +56,13 @@
       preloader.classList.add('fade-out');
       window.setTimeout(function () {
         preloader.setAttribute('hidden', '');
-      }, 500);
+      }, fadeDuration);
     }
 
     requestAnimationFrame(tick);
 
     // Safety net: never let the preloader trap a visitor if something above stalls.
-    window.setTimeout(finish, duration + 300);
+    window.setTimeout(finish, progressDuration);
   }
 
   // Custom Cursor
